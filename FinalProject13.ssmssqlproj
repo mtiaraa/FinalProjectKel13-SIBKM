@@ -19,6 +19,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="create job_histories.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>create job_histories.sql</FullPath>
+        </FileNode>
         <FileNode Name="create tabel permissions.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
@@ -36,6 +42,12 @@
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Create tbl_jobs.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Create tbl_roles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Create tbl_roles.sql</FullPath>
         </FileNode>
         <FileNode Name="CreateDatabase.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
