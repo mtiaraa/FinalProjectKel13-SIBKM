@@ -37,3 +37,11 @@ CREATE TABLE tbl_account_roles (
     CONSTRAINT FK_Account FOREIGN KEY (account) REFERENCES tbl_accounts(id),
     CONSTRAINT FK_Role FOREIGN KEY (role) REFERENCES tbl_roles(id)
 );
+
+
+-- Membuat tabel tbl_absensi
+CREATE TABLE tbl_absensi(
+id INT PRIMARY KEY NOT NULL,
+time DATE NOT NULL
+CONSTRAINT FK_Absensi FOREIGN KEY (id) REFERENCES tbl_employees(id)
+);
