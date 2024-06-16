@@ -42,6 +42,8 @@ CREATE TABLE tbl_account_roles (
 -- Membuat tabel tbl_absensi
 CREATE TABLE tbl_absensi(
 id INT PRIMARY KEY NOT NULL,
+employee INT NOT NULL,
 time DATE NOT NULL
-CONSTRAINT FK_Absensi FOREIGN KEY (id) REFERENCES tbl_employees(id)
+CONSTRAINT FK_Absensi FOREIGN KEY (employee) REFERENCES tbl_employees(id)
 );
+
