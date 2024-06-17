@@ -61,17 +61,47 @@
           <AssociatedConnUserName />
           <FullPath>SP Absensi.sql</FullPath>
         </FileNode>
+        <FileNode Name="SP Countries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SP Countries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SP Departments.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SP Departments.sql</FullPath>
+        </FileNode>
         <FileNode Name="SP Permissions.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SP Permissions.sql</FullPath>
         </FileNode>
+        <FileNode Name="SP Regions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SP Regions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
         <FileNode Name="tabel baru.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>tabel baru.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Trigger.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Trigger.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
