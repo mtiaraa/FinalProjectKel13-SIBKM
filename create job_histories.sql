@@ -1,10 +1,10 @@
 CREATE TABLE tbl_job_histories(
-employee INT NOT NULL,
-start_date DATE,
+employee INT PRIMARY KEY NOT NULL,
+start_date DATE PRIMARY KEY NOT NULL,
 end_date DATE,
-status VARCHAR (10),
-job VARCHAR (10),
-department INT,
+status VARCHAR (10) NOT NULL,
+job VARCHAR (10) NOT NULL,
+department INT NOT NULL,
 PRIMARY KEY (employee, start_date)
 );
 

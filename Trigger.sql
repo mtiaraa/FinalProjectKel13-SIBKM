@@ -1,3 +1,21 @@
+-- Membuat trigger setelah insert pada tabel tbl_employees
+CREATE TRIGGER tr_insert_employee
+ON tbl_employees
+AFTER INSERT
+AS
+BEGIN
+    -- Menambahkan data baru ke tabel tbl_job_histories dengan status "Active"
+    INSERT INTO tbl_job_histories (employee, start_date, status, job, department)
+    SELECT 
+        id, 
+        GETDATE(), 
+        'Active', 
+        job,
+        department 
+    FROM inserted;
+END;
+
+
 -- CODE BY : CAHYANI PUTRI RIYANTO--
 
 -- Membuat trigger tr_delete_employee
@@ -30,8 +48,6 @@ BEGIN
     WHERE 
         d.job <> i.job; -- Hanya jika terjadi perubahan pada kolom job
 END;
-
-
 
 
 
