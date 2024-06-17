@@ -1,15 +1,16 @@
 CREATE PROCEDURE AddAbsensi
     @id INT,
 	@employee INT,
-    @time DATE
+    @time DATE,
+	@status VARCHAR
     
 AS
 BEGIN
     SET NOCOUNT ON;
 
     -- Insert new attendance record
-    INSERT INTO tbl_absensi(id, employee, time)
-    VALUES (@id, @employee, @time);
+    INSERT INTO tbl_absensi(id, employee, time, status)
+    VALUES (@id, @employee, @time, @status);
 
     -- periksa data baru 
     IF @@ROWCOUNT = 0
@@ -24,3 +25,4 @@ BEGIN
     END
 END;
 GO
+

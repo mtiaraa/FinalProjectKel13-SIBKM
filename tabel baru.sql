@@ -47,3 +47,5 @@ time DATE NOT NULL
 CONSTRAINT FK_Absensi FOREIGN KEY (employee) REFERENCES tbl_employees(id)
 );
 
+ALTER TABLE tbl_absensi
+ADD status VARCHAR (20);
