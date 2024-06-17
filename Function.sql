@@ -19,3 +19,100 @@ BEGIN
     RETURN @result;
 END;
 GO
+
+
+-- Membuat Function format email
+CREATE FUNCTION func_email_format
+(
+    @email VARCHAR(25)
+)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @Result INT
+
+    -- Memeriksa apakah format email valid
+    IF @email LIKE '%_@__%.__%'
+        AND @email NOT LIKE '%[^a-zA-Z0-9._@%-]%'
+        AND @email LIKE '[A-Za-z0-9]%@[A-Za-z0-9]%.[A-Za-z]%[A-Za-z]%'
+    BEGIN
+        SET @Result = 1 --  Jika format memenuhi kondisi True
+    END
+    ELSE
+    BEGIN
+        SET @Result = 2 -- Jika format tidak memenuhi kondisi False
+    END
+
+    RETURN @Result
+END;
+GO
+
+
+
+-- Code By : CAHYANI PUTRI RIYANTO--
+
+-- --Membuat Functin func_gender
+CREATE FUNCTION dbo.ValidateGender (@gender VARCHAR(10))
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @IsValid BIT;
+
+    -- Periksa apakah gender valid ('M' atau 'F')
+    IF @gender IN ('Male', 'Female')
+    BEGIN
+        SET @IsValid = 1; -- True (valid)
+    END
+    ELSE
+    BEGIN
+        SET @IsValid = 0; -- False (invalid)
+    END
+
+    RETURN @IsValid;
+END;
+GO
+
+
+
+-- Membuat FUNCTION func_password_policy
+CREATE FUNCTION dbo.CheckPasswordPolicy
+(
+    @password VARCHAR(255)
+)
+RETURNS BIT
+AS
+BEGIN
+    DECLARE @isValid BIT = 1; -- Default: password valid
+
+    -- Panjang minimal password (minimal 8 karakter)
+    IF LEN(@password) < 8
+        SET @isValid = 0;
+
+    -- Memeriksa apakah password mengandung huruf besar (uppercase)
+    IF @isValid = 1 AND @password = LOWER(@password)
+        SET @isValid = 0;
+
+    -- Memeriksa apakah password mengandung huruf kecil (lowercase)
+    IF @isValid = 1 AND @password = UPPER(@password)
+        SET @isValid = 0;
+
+    -- Memeriksa apakah password mengandung angka
+    IF @isValid = 1 AND @password NOT LIKE '%[0-9]%'
+        SET @isValid = 0;
+
+    -- Memeriksa apakah password mengandung karakter khusus (simbol)
+    IF @isValid = 1 AND @password NOT LIKE '%[!@#$%^&*()-=_+{};:"|,.<>?]%'
+        SET @isValid = 0;
+
+    RETURN @isValid;
+END;
+
+
+
+DECLARE @password NVARCHAR(100) = 'Passw0rd!';
+
+IF dbo.CheckPasswordPolicy(@password) = 1
+    PRINT 'Password memenuhi kebijakan.';
+ELSE
+    PRINT 'Password tidak memenuhi kebijakan.';
+
