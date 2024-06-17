@@ -21,7 +21,35 @@ END;
 GO
 
 
--- Code By : Cahyani Putri Riyanto--
+-- Membuat Function format email
+CREATE FUNCTION func_email_format
+(
+    @email VARCHAR(25)
+)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @Result INT
+
+    -- Memeriksa apakah format email valid
+    IF @email LIKE '%_@__%.__%'
+        AND @email NOT LIKE '%[^a-zA-Z0-9._@%-]%'
+        AND @email LIKE '[A-Za-z0-9]%@[A-Za-z0-9]%.[A-Za-z]%[A-Za-z]%'
+    BEGIN
+        SET @Result = 1 --  Jika format memenuhi kondisi True
+    END
+    ELSE
+    BEGIN
+        SET @Result = 2 -- Jika format tidak memenuhi kondisi False
+    END
+
+    RETURN @Result
+END;
+GO
+
+
+
+-- Code By : CAHYANI PUTRI RIYANTO--
 
 -- --Membuat Functin func_gender
 CREATE FUNCTION dbo.ValidateGender (@gender VARCHAR(10))
