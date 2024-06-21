@@ -55,6 +55,12 @@
           <AssociatedConnUserName />
           <FullPath>CreateDatabase.sql</FullPath>
         </FileNode>
+        <FileNode Name="Data Dummy.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Data Dummy.sql</FullPath>
+        </FileNode>
         <FileNode Name="SP Absensi.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
@@ -73,11 +79,23 @@
           <AssociatedConnUserName />
           <FullPath>SP Departments.sql</FullPath>
         </FileNode>
-        <FileNode Name="SP Login.sql">
+        <FileNode Name="SP Employees.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SP Login.sql</FullPath>
+          <FullPath>SP Employees.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SP General.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SP General.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SP Location.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SP Location.sql</FullPath>
         </FileNode>
         <FileNode Name="SP Permissions.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
@@ -91,11 +109,11 @@
           <AssociatedConnUserName />
           <FullPath>SP Regions.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery1.sql">
+        <FileNode Name="SP Roles.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery1.sql</FullPath>
+          <FullPath>SP Roles.sql</FullPath>
         </FileNode>
         <FileNode Name="tabel baru.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
@@ -108,6 +126,12 @@
           <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Trigger.sql</FullPath>
+        </FileNode>
+        <FileNode Name="View.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-B50CJRL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-B50CJRL</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>View.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
