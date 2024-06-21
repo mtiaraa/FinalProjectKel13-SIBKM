@@ -116,3 +116,41 @@ IF dbo.CheckPasswordPolicy(@password) = 1
 ELSE
     PRINT 'Password tidak memenuhi kebijakan.';
 
+
+
+-- Query by Rifki Fauzifazr
+-- Function nomor telepon
+CREATE FUNCTION func_phone_number (@phone VARCHAR(20))
+RETURNS VARCHAR(1)
+AS
+BEGIN
+    DECLARE @isValid VARCHAR(1) = '2'; -- Default value is False
+
+    IF @phone NOT LIKE '%[^0-9]%' AND LEN(@phone) >= 10 AND LEN(@phone) <= 20
+        SET @isValid = '1'; -- True
+
+    RETURN @isValid;
+END;
+
+-- cek apakah functions sudah bisa dijalankan
+SELECT dbo.func_phone_number('1234567890') AS IsValid; -- Output: 1 (True)
+SELECT dbo.func_phone_number('12345678') AS IsValid; -- Output: 2 (False)
+SELECT dbo.func_phone_number('12345678901234567890') AS IsValid; -- Output: 2 (False)
+SELECT dbo.func_phone_number('12345678a') AS IsValid; -- Output: 2 (False)
+
+-- Function password match
+CREATE FUNCTION func_password_match (@newPassword VARCHAR(255), @confirmPassword VARCHAR(255))
+RETURNS VARCHAR(1)
+AS
+BEGIN
+    DECLARE @isMatch VARCHAR(1) = '2'; -- Default value is False
+
+    IF @newPassword = @confirmPassword
+        SET @isMatch = '1'; -- True
+
+    RETURN @isMatch;
+END;
+
+-- cek apakah functions sudah bisa dijalankan
+SELECT dbo.func_password_match('password', 'password') AS IsMatch; -- Output: 1 (True)
+SELECT dbo.func_password_match('password', 'pass123') AS IsMatch; -- Output: 2 (False)

@@ -50,4 +50,30 @@ BEGIN
 END;
 
 
+-- Query by Rifki Fauzifazr
+-- Membuat Trigger Absensi
+CREATE TRIGGER tr_absensi
+ON tbl_absensi
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @employee INT;
+    DECLARE @time DATETIME;
+    DECLARE @status VARCHAR(20);
 
+    SELECT @employee = id, @time = time FROM inserted;
+
+    -- Mendapatkan waktu sekarang
+    SET @time = GETDATE();
+
+    -- Menentukan status berdasarkan waktu
+    IF DATEPART(HOUR, @time) < 12
+        SET @status = 'Absen Masuk';
+    ELSE
+        SET @status = 'Absen Keluar';
+
+    -- Memasukkan status ke dalam tabel absensi
+    UPDATE tbl_absensi
+    SET status = @status
+    WHERE employee = @employee AND time = @time;
+END;

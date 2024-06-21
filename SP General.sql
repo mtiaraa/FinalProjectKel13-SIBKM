@@ -39,3 +39,48 @@ BEGIN
         PRINT 'Account not registered!';
     END
 END;
+
+
+-- SP Forgot Password
+CREATE PROCEDURE sp_forgot_password
+    @username VARCHAR(25),
+    @new_password VARCHAR(255),
+    @otp INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT * FROM tbl_accounts WHERE username = @username)
+    BEGIN
+        RAISERROR('Username not found', 16, 1)
+        RETURN
+    END
+
+    IF NOT EXISTS (SELECT * FROM tbl_accounts WHERE otp = @otp AND is_expired = 0)
+    BEGIN
+        RAISERROR('Invalid OTP', 16, 1)
+        RETURN
+    END
+
+    UPDATE tbl_accounts
+    SET password = @new_password, is_used = 1
+    WHERE username = @username
+
+    UPDATE tbl_accounts
+    SET is_expired = 1
+    WHERE otp = @otp
+END
+
+
+-- SP Generate Kode OTP
+CREATE PROCEDURE sp_generate_otp
+    @username VARCHAR(25)
+AS
+BEGIN
+    DECLARE @otp INT
+    SET @otp = ABS(CHECKSUM(NEWID())) % 1000000
+
+    UPDATE tbl_accounts
+    SET otp = @otp, is_expired = 0
+    WHERE username = @username
+
+    SELECT @otp AS otp
+END

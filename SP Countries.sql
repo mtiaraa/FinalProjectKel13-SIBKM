@@ -58,3 +58,15 @@ END;
 
 -- Menghapus data negara dengan ID 'MLY' di tabel tbl_countries
 EXEC DeleteCountry @id = 'MLY';
+
+
+-- Hapus constraint kunci asing yang ada
+ALTER TABLE dbo.tbl_countries
+DROP CONSTRAINT FK__tbl_count__regio__534D60F1;
+
+-- Tambahkan constraint kunci asing dengan ON DELETE CASCADE agar record di tabel lain terhapus juga
+ALTER TABLE dbo.tbl_countries
+ADD CONSTRAINT FK_regions
+FOREIGN KEY (region) REFERENCES dbo.tbl_regions(id)
+ON DELETE CASCADE;
+
