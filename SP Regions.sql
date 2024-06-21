@@ -42,4 +42,6 @@ BEGIN
 		END
 END;
 
-EXEC Deleteregions @id = 1;
+EXEC Deleteregions @id = 2;
+
+
